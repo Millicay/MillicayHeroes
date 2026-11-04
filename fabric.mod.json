@@ -1,0 +1,13 @@
+{
+    "schemaVersion": 1,
+    "authors": [
+        "Millicay"
+    ],
+    "environment": "*",
+    "id": "millicayheroes",
+    "version": "1.0.0",
+    "name": "Millicay Heroes",
+    "description": "A small collection of superheroes OCs.",
+    "icon": "logo.png",
+    "license": "All rights reserved"
+}

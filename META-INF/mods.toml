@@ -1,0 +1,42 @@
+modLoader="lowcodefml"
+showAsResourcePack = false
+loaderVersion="[47,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="millicayheroes"
+version="0.1.3"
+logoFile = "logo.png"
+logoBlur = false
+displayName="Millicay Heroes"
+description='''
+A small collection of superheroes OCs.
+'''
+
+[[dependencies.millicayheroes]]
+modId = "palladium"
+mandatory = true
+versionRange = "[4.4.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.millicayheroes]]
+modId = "fsang"
+mandatory = true
+versionRange = "[12.4.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.millicayheroes]]
+modId = "croptopia_additions"
+mandatory = true
+versionRange = "[2.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.millicayheroes]]
+modId = "eop"
+mandatory = true
+versionRange = "[1.0.0,)"
+ordering = "NONE"
+side = "BOTH"

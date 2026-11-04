@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#Aa",
+    "oWo",
+    "aP#"
+  ],
+  "key": {
+    "#": {
+      "item": "palladium:lead_block"
+    },
+    "A": {
+      "item": "fsang:augmented_human_dna"
+    },
+    "a": {
+      "item": "fsang:techno_organic_block"
+    },
+    "o": {
+      "item": "minecraft:ender_pearl"
+    },
+    "W": {
+      "item": "palladium:lead_circuit"
+    },
+    "P": {
+      "item": "minecraft:pufferfish"
+    }
+  },
+  "result": {
+    "item": "millicayheroes:capsule"
+  }
+}

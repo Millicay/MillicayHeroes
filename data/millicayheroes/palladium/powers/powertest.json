@@ -1,0 +1,91 @@
+{
+    "name": "powerTest",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/white_wool.png",
+    "icon": "minecraft:wither_skeleton_skull",
+    "gui_display_type": "list",
+    "abilities": {
+        "waypoint_travel": {
+            "type": "eop:waypoint_travel",
+            "icon": "minecraft:ender_pearl",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "particle1": "minecraft:sonic_boom",
+            "particle2": "minecraft:poof",
+            "sound1": "minecraft:entity.warden.sonic_boom",
+            "sound2": "minecraft:entity.generic.explode",
+            "one_way": false,
+            "carry_entities": false,
+            "allow_interdim": false,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }, "saved_coords": {
+            "type": "fsang:save_coords",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "scoreboard_x": "FSang.X",
+            "scoreboard_y": "FSang.Y",
+            "scoreboard_z": "FSang.Z",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }, "tp_to_saved_coords": {
+            "type": "fsang:tp_to_saved_coords",
+            "icon": "minecraft:command_block",
+            "title": "null",
+            "bar_color": "light_gray",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": -1,
+            "gui_position": "null",
+            "description": "null",
+            "property_x": "FSang.X",
+            "property_y": "FSang.Y",
+            "property_z": "FSang.Z",
+            "property_dimension": "FSang.Dim",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+
+    }
+}

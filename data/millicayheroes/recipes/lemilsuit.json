@@ -1,0 +1,47 @@
+{
+  "type": "palladium:item_tailoring",
+  "results": {
+    "chest": "millicayheroes:lemilchest",
+    "legs": "millicayheroes:lemilpants",
+    "feet": "millicayheroes:lemilboots"
+  },
+  "ingredients": [
+    {
+      "ingredient": {
+        "item": "palladium:red_fabric"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "palladium:yellow_fabric"
+      },
+      "count": 1
+    },
+    {
+      "ingredient": {
+        "item": "palladium:white_fabric"
+      },
+      "count": 4
+    },
+    {
+        "ingredient": {
+            "item": "palladium:blue_fabric"
+        },
+        "count": 2
+    },
+    {
+        "ingredient": {
+            "item": "minecraft:diamond"
+        },
+        "count": 24
+    }
+  ],
+  "tool": {
+    "item": "minecraft:shears"
+  },
+  "tool_icon": "palladium:item/empty_tool_slot_shears",
+  "title": "Lemillion suit",
+  "category": "test:vanilla_armor",
+  "requires_unlocking": false
+}

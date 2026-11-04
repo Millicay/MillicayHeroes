@@ -1,0 +1,11 @@
+{
+    "type": "palladium:armor",
+    "slot": "boots",
+    "armor_material": "minecraft:diamond",
+    "openable": false,
+    "opening_time": 10,
+    "opened_sound": "minecraft:item.armor.equip_leather",
+    "closed_sound": "minecraft:item.armor.equip_leather",
+    "opening_toggle_sound": "minecraft:item.armor.equip_leather"
+
+}
