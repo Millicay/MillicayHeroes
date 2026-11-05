@@ -1,0 +1,11 @@
+{
+    "type": "palladium:armor",
+    "slot": "chest",
+    "armor_material": "millicayheroes:millicay",
+    "openable": false,
+    "opening_time": 10,
+    "opened_sound": "minecraft:item.armor.equip_leather",
+    "closed_sound": "minecraft:item.armor.equip_leather",
+    "opening_toggle_sound": "minecraft:item.armor.equip_leather"
+
+}

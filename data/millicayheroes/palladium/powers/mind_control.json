@@ -1,0 +1,107 @@
+{
+    "name": "Mind Control",
+    "persistent_data": false,
+    "background": "minecraft:textures/block/crying_obsidian.png",
+    "icon": "millicayheroes:cursed_therapy",
+    "gui_display_type": "list",
+    "abilities": {
+        "affinity_control": {
+            "type": "millicayheroes:mind_control",
+            "icon": "minecraft:poppy",
+            "title": "Affinity",
+            "description": "Look at a villager: more hearts with you. Crouch: fewer hearts.",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "mode": "affinity",
+            "range": 16,
+            "hearts_step": 10,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "mood_control": {
+            "type": "millicayheroes:mind_control",
+            "icon": "minecraft:cake",
+            "title": "Mood",
+            "description": "Look at a villager: happier. Crouch: sadder.",
+            "bar_color": "yellow",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "mode": "mood",
+            "range": 16,
+            "mood_step": 5,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "relationship_control": {
+            "type": "millicayheroes:mind_control",
+            "icon": "mca:engagement_ring",
+            "title": "Relationship",
+            "description": "Look at a villager: single, promised, engaged, then married to you. Crouch: break up.",
+            "bar_color": "magenta",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "mode": "relationship",
+            "range": 16,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "anger_control": {
+            "type": "millicayheroes:mind_control",
+            "icon": "minecraft:bone",
+            "title": "Anger",
+            "description": "Look at a neutral mob: calm it down. Crouch: make it angry at the nearest other mob.",
+            "bar_color": "purple",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "mode": "anger",
+            "range": 16,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

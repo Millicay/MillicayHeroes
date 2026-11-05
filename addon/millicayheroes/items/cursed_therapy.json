@@ -1,0 +1,9 @@
+{
+    "type": "palladium:default",
+    "max_stack_size": 1,
+    "rarity": "epic",
+    "tooltip": [
+        {"text": "Hold it to gain the Mind Control power", "color": "#B13CFF"},
+        {"text": "Sold by master cultists", "color": "#7A1F5F"}
+    ]
+}

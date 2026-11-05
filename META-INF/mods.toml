@@ -40,3 +40,9 @@ mandatory = true
 versionRange = "[1.0.0,)"
 ordering = "NONE"
 side = "BOTH"
+[[dependencies.millicayheroes]]
+modId = "mca"
+mandatory = false
+versionRange = "[7.5,)"
+ordering = "NONE"
+side = "BOTH"

@@ -1,7 +1,19 @@
 {
     "pack.millicayheroes.name": "Millicay Heroes",
-    "item.millicayheroes.capsule": "Capsule",
+    "itemGroup.millicayheroes.millicay_heroes": "Millicay Heroes",
+    "tag.item.millicayheroes.lemil_suit": "Lemillion Suit",
+    "tag.item.millicayheroes.milli_suit": "Millicay Suit",
+    "stackgroup.millicayheroes.lemil_suit": "Lemillion Suit",
+    "stackgroup.millicayheroes.milli_suit": "Millicay Suit",
+    "item.millicayheroes.ender_pill": "Ender Pill",
     "item.millicayheroes.lemilchest": "Lemillion chestplate",
     "item.millicayheroes.lemilpants": "Lemillion leggings",
-    "item.millicayheroes.lemilboots": "Lemillion boots"
+    "item.millicayheroes.lemilboots": "Lemillion boots",
+    "item.millicayheroes.millichest": "Millicay chestplate",
+    "item.millicayheroes.millipants": "Millicay leggings",
+    "item.millicayheroes.milliboots": "Millicay boots",
+    "ability.millicayheroes.waypoint": "Waypoint",
+    "item.millicayheroes.cursed_therapy": "Cursed Therapy",
+    "ability.millicayheroes.mind_control": "Mind Control",
+    "item.millicayheroes.techno_beacon": "Techno Beacon"
 }

@@ -1,0 +1,15 @@
+{
+    "type": "palladium:default",
+    "max_stack_size": 16,
+    "rarity": "epic",
+    "tooltip": [
+        {"text": "Grants the Waypoints power when eaten", "color": "#B65CFF"}
+    ],
+    "food": {
+        "nutrition": 1,
+        "saturation_modifier": 0.1,
+        "meat": false,
+        "can_always_eat": true,
+        "fast": true
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "type": "palladium:skin_overlay",
+    "render_type": "solid",
+    "textures": "millicayheroes:textures/models/armor/millichest.png"
+}

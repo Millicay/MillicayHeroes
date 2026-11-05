@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "millicayheroes:item/capsule"
+    "layer0": "millicayheroes:item/cursed_therapy"
   }
 }

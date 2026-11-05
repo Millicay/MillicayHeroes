@@ -1,0 +1,109 @@
+{
+    "name": "Waypoints",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/purple_concrete.png",
+    "icon": "minecraft:ender_pearl",
+    "gui_display_type": "list",
+    "abilities": {
+        "teleport_waypoint": {
+            "type": "millicayheroes:waypoint",
+            "icon": "minecraft:ender_pearl",
+            "title": "Warp to Waypoint",
+            "description": "Teleports you to the selected waypoint.",
+            "bar_color": "purple",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "mode": "teleport",
+            "hud_seconds": 3,
+            "allow_interdim": true,
+            "sound": "minecraft:entity.enderman.teleport",
+            "particle": "minecraft:portal",
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "scroll_up_waypoint": {
+            "type": "millicayheroes:waypoint",
+            "icon": "minecraft:compass",
+            "title": "Waypoint Up",
+            "description": "Shows your waypoints and selects the one above.",
+            "bar_color": "yellow",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "mode": "scroll_up",
+            "hud_seconds": 5,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "scroll_down_waypoint": {
+            "type": "millicayheroes:waypoint",
+            "icon": "minecraft:recovery_compass",
+            "title": "Waypoint Down",
+            "description": "Shows your waypoints and selects the one below.",
+            "bar_color": "yellow",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "mode": "scroll_down",
+            "hud_seconds": 5,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "save_waypoint": {
+            "type": "millicayheroes:waypoint",
+            "icon": "minecraft:ender_eye",
+            "title": "Save Waypoint",
+            "description": "Saves where you are standing. Crouch while pressing to delete the selected waypoint.",
+            "bar_color": "light_blue",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 3,
+            "mode": "save",
+            "max_waypoints": 5,
+            "hud_seconds": 5,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

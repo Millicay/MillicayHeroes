@@ -1,0 +1,17 @@
+{
+    "icon": "millicayheroes:ender_pill",
+    "title": {
+        "translate": "itemGroup.millicayheroes.millicay_heroes"
+    },
+    "items": [
+        "millicayheroes:ender_pill",
+        "millicayheroes:cursed_therapy",
+        "millicayheroes:techno_beacon",
+        "millicayheroes:lemilchest",
+        "millicayheroes:lemilpants",
+        "millicayheroes:lemilboots",
+        "millicayheroes:millichest",
+        "millicayheroes:millipants",
+        "millicayheroes:milliboots"
+    ]
+}

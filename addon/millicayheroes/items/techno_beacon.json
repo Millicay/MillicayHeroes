@@ -1,0 +1,11 @@
+{
+    "type": "palladium:sword",
+    "tier": "minecraft:iron",
+    "base_damage": 3,
+    "attack_speed": -2.4,
+    "rarity": "rare",
+    "tooltip": [
+        {"text": "Right click to throw it and teleport to where it lands", "color": "#3FE0C8"},
+        {"text": "It isn't used up, and you take no fall damage", "color": "#7F9CC9"}
+    ]
+}
