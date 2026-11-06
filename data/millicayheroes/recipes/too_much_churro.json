@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GGG",
+        "TCT",
+        "FTF"
+    ],
+    "key": {
+        "G": {"item": "minecraft:golden_apple"},
+        "C": {"item": "minecraft:cake"},
+        "T": {"item": "minecraft:tnt"},
+        "F": {"item": "croptopia_additions:frosted_churro"}
+    },
+    "result": {
+        "item": "millicayheroes:too_much_churro",
+        "count": 1
+    }
+}

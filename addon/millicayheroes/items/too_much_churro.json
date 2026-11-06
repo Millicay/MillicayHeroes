@@ -1,0 +1,15 @@
+{
+    "type": "palladium:default",
+    "max_stack_size": 16,
+    "rarity": "epic",
+    "tooltip": [
+        {"text": "Grants the Churro Power when eaten", "color": "#E8A040"}
+    ],
+    "food": {
+        "nutrition": 8,
+        "saturation_modifier": 0.8,
+        "meat": false,
+        "can_always_eat": true,
+        "fast": false
+    }
+}

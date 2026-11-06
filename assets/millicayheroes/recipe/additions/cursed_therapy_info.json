@@ -1,0 +1,9 @@
+{
+    "type": "emi:info",
+    "stacks": ["item:millicayheroes:cursed_therapy"],
+    "text": [
+        "emi.millicayheroes.cursed_therapy.info.1",
+        "emi.millicayheroes.cursed_therapy.info.2",
+        "emi.millicayheroes.cursed_therapy.info.3"
+    ]
+}

@@ -1,0 +1,75 @@
+{
+    "name": "Churro Power",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/orange_terracotta.png",
+    "icon": "croptopia_additions:frosted_churro",
+    "gui_display_type": "list",
+    "abilities": {
+        "churro_flight": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:feather",
+            "title": "Churro Flight",
+            "description": "You can fly. Jump twice to take off.",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "attribute": "palladium:flight_speed",
+            "amount": 0.75,
+            "operation": 0,
+            "uuid": "7c1a2e64-3b5d-4f0e-9a61-c4d2b8e0f513"
+        },
+        "churro_push": {
+            "type": "millicayheroes:churro_push",
+            "icon": "minecraft:tnt",
+            "title": "Churro Blast",
+            "description": "Pushes every entity around you about 15 blocks away.",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "radius": 6,
+            "distance": 15,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 40,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "churro_generate": {
+            "type": "palladium:command",
+            "icon": "croptopia_additions:churro",
+            "title": "Churro Maker",
+            "description": "Makes a fresh churro.",
+            "bar_color": "yellow",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "first_tick_commands": [],
+            "last_tick_commands": [],
+            "commands": [
+                "give @s croptopia_additions:churro 1",
+                "playsound minecraft:entity.item.pickup player @a ~ ~ ~ 0.8 1.2"
+            ],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

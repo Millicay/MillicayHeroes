@@ -1,0 +1,101 @@
+{
+    "name": "Fire",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/magma.png",
+    "icon": "minecraft:fire_charge",
+    "gui_display_type": "list",
+    "abilities": {
+        "fire_flight": {
+            "type": "palladium:attribute_modifier",
+            "icon": "minecraft:blaze_powder",
+            "title": "Flame Flight",
+            "description": "You can fly. Jump twice to take off.",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": true,
+            "list_index": -1,
+            "attribute": "palladium:flight_speed",
+            "amount": 0.75,
+            "operation": 0,
+            "uuid": "3e9b6f21-8c4a-4d17-b2e5-a07f1c93d6b8"
+        },
+        "fireball": {
+            "type": "millicayheroes:fire",
+            "icon": "minecraft:fire_charge",
+            "title": "Fireball",
+            "description": "Throws an exploding fireball where you look.",
+            "bar_color": "red",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "mode": "fireball",
+            "explosion_power": 1,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "fire_stream": {
+            "type": "palladium:energy_beam",
+            "icon": "minecraft:blaze_rod",
+            "title": "Fire Stream",
+            "description": "Hold to shoot a stream of fire from your hands.",
+            "bar_color": "orange",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "energy_beam": "fsang:pyrokinesis_fire",
+            "damage": 4,
+            "max_distance": 25,
+            "speed": 0.5,
+            "set_on_fire_seconds": 4,
+            "cause_fire": true,
+            "smelt_blocks": false,
+            "commands_on_block_hit": [],
+            "commands_on_entity_hit": [],
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:held",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "fire_cook": {
+            "type": "millicayheroes:fire",
+            "icon": "minecraft:furnace",
+            "title": "Cook",
+            "description": "Cooks the items in your main hand and off hand, like a furnace.",
+            "bar_color": "yellow",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 2,
+            "mode": "cook",
+            "explosion_power": 0,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

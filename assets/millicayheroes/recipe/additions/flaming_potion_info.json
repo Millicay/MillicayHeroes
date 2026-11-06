@@ -1,0 +1,12 @@
+{
+    "type": "emi:info",
+    "stacks": [
+        "item:millicayheroes:flaming_potion",
+        "item:fsang:dark_matter"
+    ],
+    "text": [
+        "emi.millicayheroes.flaming_potion.info.1",
+        "emi.millicayheroes.flaming_potion.info.2",
+        "emi.millicayheroes.flaming_potion.info.3"
+    ]
+}

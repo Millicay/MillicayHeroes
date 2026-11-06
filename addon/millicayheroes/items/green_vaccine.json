@@ -1,0 +1,15 @@
+{
+    "type": "palladium:default",
+    "max_stack_size": 16,
+    "rarity": "epic",
+    "tooltip": [
+        {"text": "Grants the Flowery Step power when used", "color": "#3FCF5A"}
+    ],
+    "food": {
+        "nutrition": 1,
+        "saturation_modifier": 0.1,
+        "meat": false,
+        "can_always_eat": true,
+        "fast": true
+    }
+}

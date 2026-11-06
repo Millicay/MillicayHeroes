@@ -1,0 +1,32 @@
+{
+    "name": "Flowery Step",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/moss_block.png",
+    "icon": "minecraft:bone_meal",
+    "gui_display_type": "list",
+    "abilities": {
+        "flowery_step": {
+            "type": "millicayheroes:flowery_step",
+            "icon": "minecraft:poppy",
+            "title": "Flowery Step",
+            "description": "Toggle: everything you walk over grows like it got bone meal.",
+            "bar_color": "lime",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "chance_percent": 100,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:toggle",
+                        "cooldown": 0,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

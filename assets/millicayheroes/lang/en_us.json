@@ -15,5 +15,17 @@
     "ability.millicayheroes.waypoint": "Waypoint",
     "item.millicayheroes.cursed_therapy": "Cursed Therapy",
     "ability.millicayheroes.mind_control": "Mind Control",
-    "item.millicayheroes.techno_beacon": "Techno Beacon"
+    "item.millicayheroes.ender_beacon": "Ender Beacon",
+    "emi.millicayheroes.cursed_therapy.info.1": "Sold by a master-level (level 5) Cultist from Minecraft Comes Alive for 3 blocks of emerald.",
+    "emi.millicayheroes.cursed_therapy.info.2": "A cultist levels up by trading with you, like any villager.",
+    "emi.millicayheroes.cursed_therapy.info.3": "Hold it in either hand to gain the Mind Control power.",
+    "item.millicayheroes.green_vaccine": "Green Vaccine",
+    "ability.millicayheroes.flowery_step": "Flowery Step",
+    "item.millicayheroes.too_much_churro": "Too Much Churro",
+    "ability.millicayheroes.churro_push": "Churro Blast",
+    "item.millicayheroes.flaming_potion": "Flaming Potion",
+    "ability.millicayheroes.fire": "Fire",
+    "emi.millicayheroes.flaming_potion.info.1": "Brewed in a brewing stand.",
+    "emi.millicayheroes.flaming_potion.info.2": "Put Dark Matter in a bottle slot and an Enchanted Book with Flame as the ingredient (blaze powder as fuel).",
+    "emi.millicayheroes.flaming_potion.info.3": "Drink it to gain the Fire power."
 }

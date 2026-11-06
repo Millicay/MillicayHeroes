@@ -95,7 +95,7 @@ function mcEndRelationship(villager) {
 function mcEndPlayerRelationship(player, villager) {
     let data = MC_PlayerSaveData.get(player);
     let partner = data.getPartner().orElse(null);
-    if (partner && String(partner.getUUID()) !== String(villager.getUUID()) && mcIsMcaVillager(partner)) {
+    if (partner && String(partner.getUuid()) !== String(villager.getUuid()) && mcIsMcaVillager(partner)) {
         partner.getRelationships().endRelationShip(MC_RelationshipState.SINGLE);
     }
     data.endRelationShip(MC_RelationshipState.SINGLE);
@@ -104,7 +104,7 @@ function mcEndPlayerRelationship(player, villager) {
 function mcRelationship(player, villager, crouching) {
     let rel = villager.getRelationships();
     let data = MC_PlayerSaveData.get(player);
-    let uuid = player.getUUID();
+    let uuid = player.getUuid();
     let name = mcName(villager);
 
     if (crouching) {
@@ -153,32 +153,39 @@ function mcFindNewEnemy(player, mob, range) {
     let best = null, bestScore = 1e9;
     mob.level.getEntitiesWithin(box).forEach((e) => {
         if (!e.isLiving() || !e.isAlive()) return;
-        let id = String(e.getUUID());
-        if (id === String(mob.getUUID()) || id === String(player.getUUID())) return;
+        let id = String(e.getUuid());
+        if (id === String(mob.getUuid()) || id === String(player.getUuid())) return;
         if (e.isPlayer() && e.isCreative && e.isCreative()) return;
         // Prefer monsters: they count as being much closer.
-        let score = mob.distanceTo(e) - (e.isMonster() ? 1000 : 0);
+        let score = mob.distanceToEntity(e) -(e.isMonster() ? 1000 : 0);
         if (score < bestScore) { bestScore = score; best = e; }
     });
     return best;
 }
 
-function mcAnger(player, mob, range, crouching) {
+// Calmed mobs keep this tag (the game time when the calm ends). While it's active,
+// the LivingChangeTargetEvent listener below stops them from picking any new target.
+// Without it, an iron golem re-targets you on the next tick if the villagers dislike you.
+const MC_CALM_KEY = 'millicayheroes_calm_until';
+
+function mcAnger(player, mob, range, crouching, calmSeconds) {
     let name = mcName(mob);
     if (!crouching) {
         mob.stopBeingAngry();
         mob.setTarget(null);
+        mob.persistentData.putLong(MC_CALM_KEY, mob.level.getTime() + calmSeconds * 20);
         mcFx(mob, 'minecraft:happy_villager', 'minecraft:entity.illusioner.mirror_move');
-        mcMessage(player, `§b${name} §7calms down`);
+        mcMessage(player, `§b${name} §7calms down for ${calmSeconds} seconds`);
         return;
     }
+    mob.persistentData.remove(MC_CALM_KEY);
 
     let enemy = mcFindNewEnemy(player, mob, range);
     if (!enemy) {
         mcMessage(player, `§7No one near ${name} to be angry at`);
         return;
     }
-    mob.setPersistentAngerTarget(enemy.getUUID());
+    mob.setPersistentAngerTarget(enemy.getUuid());
     mob.startPersistentAngerTimer();
     mob.setLastHurtByMob(enemy);
     mob.setTarget(enemy);
@@ -186,12 +193,29 @@ function mcAnger(player, mob, range, crouching) {
     mcMessage(player, `§c${name} §7is now angry at §f${mcName(enemy)}`);
 }
 
+ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingChangeTargetEvent', (event) => {
+    try {
+        let mob = event.getEntity();
+        if (!mob || mob.level.isClientSide() || event.getNewTarget() == null) return;
+        let data = mob.persistentData;
+        if (!data.contains(MC_CALM_KEY)) return;
+        if (mob.level.getTime() < data.getLong(MC_CALM_KEY)) {
+            event.setCanceled(true);
+        } else {
+            data.remove(MC_CALM_KEY);
+        }
+    } catch (err) {
+        console.error('Millicay mind control calm error: ' + err);
+    }
+});
+
 StartupEvents.registry('palladium:abilities', (event) => {
     event.create('millicayheroes:mind_control')
         .icon(palladium.createItemIcon('minecraft:written_book'))
         .addProperty('mode', 'string', 'affinity', 'What this key does: "affinity", "mood", "relationship" or "anger".')
         .addProperty('range', 'integer', 16, 'How far away (in blocks) the target can be.')
         .addProperty('hearts_step', 'integer', 10, 'Hearts added or removed per press ("affinity" mode).')
+        .addProperty('calm_seconds', 'integer', 60, 'How long a calmed neutral mob stays calm ("anger" mode).')
         .addProperty('mood_step', 'integer', 5, 'Mood points added or removed per press ("mood" mode). MCA mood goes from -15 to 15.')
 
         .tick((entity, entry, holder, enabled) => {
@@ -215,7 +239,7 @@ StartupEvents.registry('palladium:abilities', (event) => {
                         mcMessage(entity, '§7Look at a neutral mob (wolf, iron golem, enderman, bee...)');
                         return;
                     }
-                    mcAnger(entity, target, range, crouching);
+                    mcAnger(entity, target, range, crouching, Math.max(1, entry.getPropertyByName('calm_seconds')));
                     return;
                 }
 
