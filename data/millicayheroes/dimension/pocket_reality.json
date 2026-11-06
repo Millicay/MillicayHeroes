@@ -1,0 +1,13 @@
+{
+    "type": "millicayheroes:pocket_reality",
+    "generator": {
+        "type": "minecraft:flat",
+        "settings": {
+            "biome": "millicayheroes:pocket_reality",
+            "layers": [
+                {"block": "minecraft:barrier", "height": 1}
+            ],
+            "structure_overrides": []
+        }
+    }
+}

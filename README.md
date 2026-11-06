@@ -21,6 +21,36 @@ Every item in the pack is in the **Millicay Heroes** creative tab, which is defi
 
 With REMI installed, the creative tab also appears as a tab in EMI's item list. Each suit collapses into one stack group in EMI: "Lemillion Suit" and "Millicay Suit". The groups are built from the item tags in `data/millicayheroes/tags/items/` and the files in `assets/millicayheroes/stack_groups/`. In JEI or EMI you can also search `@millicayheroes` to show only this pack's items.
 
+## Pocket Reality power (`millicayheroes:pocket_reality`)
+
+Two abilities:
+
+- **Pocket Portal** (key press): opens a portal (a ring of purple particles) 2.5 blocks in front of you for 15 seconds. Anything that walks into it, including you, friends and mobs, is teleported. Press again next to it to close it early.
+  - From any dimension, it leads to **your own spot in the pocket reality** (dimension `millicayheroes:pocket_reality`). Each player gets a different spot, 1024+ blocks apart. A small purpur platform appears the first time, over an invisible barrier floor, so you can't fall into the void. It's always night there, with an End-style sky.
+  - Inside the pocket reality, the portal leads back. Each player returns to where they came in. Mobs, and players with nowhere stored, go to your return spot or world spawn.
+- **Ender Chest** (key press): opens your own ender chest, wherever you are.
+
+`portal_seconds` in the power file sets how long a portal stays open.
+
+**Getting it:** use a **Multiversal Catalyst** (`millicayheroes:multiversal_catalyst`). Recipe:
+
+| | | |
+| --- | --- | --- |
+| Gamma Radiation | TNT | Gamma Radiation |
+| Ender Chest | Multiversal Extrapolator | Ender Chest |
+| Gamma Radiation | TNT | Gamma Radiation |
+
+Gamma Radiation is FSang's `fsang:gamma_syringe`. The Multiversal Extrapolator is Palladium's `palladium:multiversal_extrapolator`.
+
+The dimension is new data, so leave the world and rejoin (or restart) after installing. `/reload` isn't enough for dimensions.
+
+| File | Script type | Purpose |
+| --- | --- | --- |
+| `addon/millicayheroes/kubejs_scripts/pocket_reality_ability.js` | startup | Registers the `millicayheroes:pocket_reality` ability type (portal, ender chest) |
+| `data/millicayheroes/kubejs_scripts/multiversal_catalyst.js` | server | Gives the power when you use a Multiversal Catalyst |
+| `data/millicayheroes/palladium/powers/pocket_reality.json` | power | The two abilities |
+| `data/millicayheroes/dimension/pocket_reality.json`, `dimension_type/`, `worldgen/biome/` | data | The pocket reality dimension |
+
 ## Fire power (`millicayheroes:fire`)
 
 Four abilities:
@@ -30,14 +60,13 @@ Four abilities:
 - **Fire Stream** (hold the key): a fire beam from your hands, 25 blocks long, 4 damage and sets targets and blocks on fire. It uses FSang's `fsang:pyrokinesis_fire` beam look.
 - **Cook** (key press, 1 s cooldown): smelts the items in your main hand and off hand as a furnace would (raw food, ores, sand, logs...), and gives the furnace XP.
 
-**Getting it:** drink a **Flaming Potion** (`millicayheroes:flaming_potion`). Brew it in a brewing stand: **Dark Matter** (`fsang:dark_matter`) in a bottle slot, an **Enchanted Book with Flame** as the ingredient, blaze powder as fuel. The book can have other enchantments too. Drinking it gives back a glass bottle.
+**Getting it:** drink a **Flaming Potion** (`millicayheroes:flaming_potion`). It has no recipe yet, so take it from the creative tab or use `/give @s millicayheroes:flaming_potion`. Drinking it gives back a glass bottle.
 
 | File | Script type | Purpose |
 | --- | --- | --- |
-| `addon/millicayheroes/kubejs_scripts/fire_ability.js` | startup | Registers the `millicayheroes:fire` ability type (fireball, cook) and the brewing recipe |
+| `addon/millicayheroes/kubejs_scripts/fire_ability.js` | startup | Registers the `millicayheroes:fire` ability type (fireball, cook) |
 | `data/millicayheroes/kubejs_scripts/flaming_potion.js` | server | Gives the power when you drink a Flaming Potion |
 | `data/millicayheroes/palladium/powers/fire.json` | power | Flight, fireball, fire stream and cook abilities |
-| `assets/millicayheroes/recipe/additions/flaming_potion_info.json` | EMI | Info page explaining the brewing recipe |
 
 ## Churro Power (`millicayheroes:churro_power`)
 

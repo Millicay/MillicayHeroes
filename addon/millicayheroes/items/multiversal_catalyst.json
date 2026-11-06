@@ -1,0 +1,15 @@
+{
+    "type": "palladium:default",
+    "max_stack_size": 16,
+    "rarity": "epic",
+    "tooltip": [
+        {"text": "Grants the Pocket Reality power when used", "color": "#C77DFF"}
+    ],
+    "food": {
+        "nutrition": 0,
+        "saturation_modifier": 0.0,
+        "meat": false,
+        "can_always_eat": true,
+        "fast": true
+    }
+}

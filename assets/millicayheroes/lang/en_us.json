@@ -25,7 +25,6 @@
     "ability.millicayheroes.churro_push": "Churro Blast",
     "item.millicayheroes.flaming_potion": "Flaming Potion",
     "ability.millicayheroes.fire": "Fire",
-    "emi.millicayheroes.flaming_potion.info.1": "Brewed in a brewing stand.",
-    "emi.millicayheroes.flaming_potion.info.2": "Put Dark Matter in a bottle slot and an Enchanted Book with Flame as the ingredient (blaze powder as fuel).",
-    "emi.millicayheroes.flaming_potion.info.3": "Drink it to gain the Fire power."
+    "item.millicayheroes.multiversal_catalyst": "Multiversal Catalyst",
+    "ability.millicayheroes.pocket_reality": "Pocket Reality"
 }

@@ -1,0 +1,57 @@
+{
+    "name": "Pocket Reality",
+    "persistent_data": true,
+    "background": "minecraft:textures/block/purpur_block.png",
+    "icon": "minecraft:ender_eye",
+    "gui_display_type": "list",
+    "abilities": {
+        "pocket_portal": {
+            "type": "millicayheroes:pocket_reality",
+            "icon": "minecraft:ender_eye",
+            "title": "Pocket Portal",
+            "description": "Opens a portal to your pocket reality for 15 seconds (inside it, a portal back). Press again to close it.",
+            "bar_color": "purple",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 0,
+            "mode": "portal",
+            "portal_seconds": 15,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 20,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        },
+        "pocket_ender_chest": {
+            "type": "millicayheroes:pocket_reality",
+            "icon": "minecraft:ender_chest",
+            "title": "Ender Chest",
+            "description": "Opens your ender chest, wherever you are.",
+            "bar_color": "magenta",
+            "hidden": false,
+            "hidden_in_bar": false,
+            "list_index": 1,
+            "mode": "ender_chest",
+            "portal_seconds": 15,
+            "conditions": {
+                "enabling": [
+                    {
+                        "type": "palladium:action",
+                        "cooldown": 10,
+                        "key_type": "key_bind",
+                        "needs_empty_hand": false,
+                        "allow_scrolling_when_crouching": true
+                    }
+                ],
+                "unlocking": []
+            }
+        }
+    }
+}

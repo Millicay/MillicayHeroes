@@ -5,8 +5,6 @@
 //                      (sets things on fire, no explosion); 1+ = ghast fireball that explodes.
 //   mode "cook"     -> smelts the items in your main hand and off hand, like a furnace would
 //                      (raw beef -> steak, iron ore -> iron ingot, sand -> glass...).
-//
-// The brewing recipe for the Flaming Potion is also registered here (see the bottom).
 
 const FR_Component = Java.loadClass('net.minecraft.network.chat.Component');
 const FR_SmallFireball = Java.loadClass('net.minecraft.world.entity.projectile.SmallFireball');
@@ -118,40 +116,4 @@ StartupEvents.registry('palladium:abilities', (event) => {
                 console.error('Millicay fire error (' + mode + '): ' + err);
             }
         });
-});
-
-// ---------- Flaming Potion brewing recipe ----------
-// Brewing stand: Dark Matter (fsang:dark_matter) in a bottle slot + an Enchanted Book with
-// Flame (any level, other enchantments allowed) as the ingredient -> Flaming Potion.
-//
-// Written as a custom IBrewingRecipe that checks the items itself. Forge's ready-made helpers
-// (Ingredient.of, PartialNBTIngredient.of) have several Java versions that Rhino can't pick between.
-const FRB_IBrewingRecipe = Java.loadClass('net.minecraftforge.common.brewing.IBrewingRecipe');
-const FRB_BrewingRecipeRegistry = Java.loadClass('net.minecraftforge.common.brewing.BrewingRecipeRegistry');
-const FRB_ItemStack = Java.loadClass('net.minecraft.world.item.ItemStack');
-
-function frbIsDarkMatter(stack) {
-    return !stack.isEmpty() && String(stack.getId()) === 'fsang:dark_matter';
-}
-
-function frbIsFlameBook(stack) {
-    if (stack.isEmpty() || String(stack.getId()) !== 'minecraft:enchanted_book') return false;
-    let tag = stack.getTag();
-    // Stored enchantments look like {StoredEnchantments:[{id:"minecraft:flame",lvl:1s}]}
-    return tag != null && String(tag).indexOf('"minecraft:flame"') >= 0;
-}
-
-StartupEvents.postInit((event) => {
-    try {
-        FRB_BrewingRecipeRegistry.addRecipe(new FRB_IBrewingRecipe({
-            isInput: (stack) => frbIsDarkMatter(stack),
-            isIngredient: (stack) => frbIsFlameBook(stack),
-            getOutput: (input, ingredient) => (frbIsDarkMatter(input) && frbIsFlameBook(ingredient))
-                ? Item.of('millicayheroes:flaming_potion')
-                : FRB_ItemStack.EMPTY
-        }));
-        console.info('Millicay flaming potion: brewing recipe added (dark matter + flame book)');
-    } catch (err) {
-        console.error('Millicay flaming potion brewing recipe error: ' + err);
-    }
 });

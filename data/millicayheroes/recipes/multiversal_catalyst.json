@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "GTG",
+        "EME",
+        "GTG"
+    ],
+    "key": {
+        "G": {"item": "fsang:gamma_syringe"},
+        "T": {"item": "minecraft:tnt"},
+        "E": {"item": "minecraft:ender_chest"},
+        "M": {"item": "palladium:multiversal_extrapolator"}
+    },
+    "result": {
+        "item": "millicayheroes:multiversal_catalyst",
+        "count": 1
+    }
+}
