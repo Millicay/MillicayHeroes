@@ -2,7 +2,7 @@
     "pack": {
         "id": "millicayheroes",
         "pack_format": 15,
-        "description": "A small collection of superheroes OCs.",
+        "description": "A small collection of superhero OCs.",
         "version": "1.0.0"
     },
     "dependencies": {
